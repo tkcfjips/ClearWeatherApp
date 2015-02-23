@@ -16,34 +16,35 @@ class DailyWeather: NSObject {
     var main = String()
     var dt = String()
     
-    class func perseJSON(data: AnyObject?) -> NSArray {
+    class func parseJSON(data: AnyObject?) -> NSArray {
         var _weatherData = NSMutableArray()
-        if let weatherData = data as? NSMutableArray {
-            for list in weatherData {
-                let weather = DailyWeather()
-                if let weatherArray = list["weather"] as? NSArray {
-                    if let aDescription = weatherArray[0]["description"] as? String {
-                        weather.aDescription = aDescription
+        if let weatherData = data as? NSDictionary {
+            if let lists = weatherData["list"] as? NSArray {
+                for list in lists {
+                    let weather = DailyWeather()
+                    if let weatherArray = list["weather"] as? NSArray {
+                        if let aDescription = weatherArray[0]["description"] as? String {
+                            weather.aDescription = aDescription
+                        }
+                        if let main = weatherArray[0]["main"] as? String {
+                            weather.main = main
+                        }
                     }
-                    if let main = weatherArray[0]["main"] as? String {
-                        weather.main = main
+                    if let main = list["main"] as? NSDictionary {
+                        if let temp_min = main["temp_min"] as? Double {
+                            weather.temp_min = translateDouble(temp_min)
+                        }
+                        if let temp_max = main["temp_max"] as? Double {
+                            weather.temp_max = translateDouble(temp_max)
+                        }
                     }
+                    if let dt = list["dt"] as? NSTimeInterval {
+                        weather.dt = translateTime(dt)
+                    }
+                    _weatherData.addObject(weather)
                 }
-                if let main = list["main"] as? NSDictionary {
-                    if let temp_min = main["temp_min"] as? Double {
-                        weather.temp_min = translateDouble(temp_min)
-                    }
-                    if let temp_max = main["temp_max"] as? Double {
-                        weather.temp_max = translateDouble(temp_max)
-                    }
-                }
-                if let dt = list["dt"] as? NSTimeInterval {
-                    weather.dt = translateTime(dt)
-                }
-                _weatherData.addObject(weather)
             }
         }
-        
         return _weatherData
     }
     
