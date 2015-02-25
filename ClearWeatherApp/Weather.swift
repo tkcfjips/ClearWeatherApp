@@ -51,10 +51,10 @@ class Weather: NSObject {
     }
     
     private class func translateDouble(doubleValue: Double) -> String {
-        return NSString(format: "%1.0f゜", floor(doubleValue - 273.15))
+        return NSString(format: "%1.0f°", floor(doubleValue - 273.15))
     }
     
-    func translateString(StringValue: String) -> Double {
+    private class func translateString(StringValue: String) -> Double {
         return atof(StringValue)
     }
     

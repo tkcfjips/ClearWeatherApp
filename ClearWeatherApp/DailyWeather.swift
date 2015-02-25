@@ -11,18 +11,18 @@ import UIKit
 class DailyWeather: NSObject {
     
     var aDescription = String()
-    var temp_min = String()
-    var temp_max = String()
+    var min = String()
+    var max = String()
     var main = String()
     var dt = String()
     
-    class func parseJSON(data: AnyObject?) -> NSArray {
-        var _weatherData = NSMutableArray()
+    class func parseJSON(data: AnyObject?) -> [DailyWeather] {
+        var dailyWeather = [DailyWeather]()
         if let weatherData = data as? NSDictionary {
-            if let lists = weatherData["list"] as? NSArray {
-                for list in lists {
+            if let list = weatherData["list"] as? NSArray {
+                for lst in list {
                     let weather = DailyWeather()
-                    if let weatherArray = list["weather"] as? NSArray {
+                    if let weatherArray = lst["weather"] as? NSArray {
                         if let aDescription = weatherArray[0]["description"] as? String {
                             weather.aDescription = aDescription
                         }
@@ -30,34 +30,32 @@ class DailyWeather: NSObject {
                             weather.main = main
                         }
                     }
-                    if let main = list["main"] as? NSDictionary {
-                        if let temp_min = main["temp_min"] as? Double {
-                            weather.temp_min = translateDouble(temp_min)
-                        }
-                        if let temp_max = main["temp_max"] as? Double {
-                            weather.temp_max = translateDouble(temp_max)
-                        }
-                    }
-                    if let dt = list["dt"] as? NSTimeInterval {
+                    if let dt = lst["dt"] as? NSTimeInterval {
                         weather.dt = translateTime(dt)
                     }
-                    _weatherData.addObject(weather)
+                    if let temp = lst["temp"] as? NSDictionary {
+                        if let temp_min = temp["min"] as? Double {
+                            weather.min = translateDouble(temp_min)
+                        }
+                        if let temp_max = temp["max"] as? Double {
+                            weather.max = translateDouble(temp_max)
+                        }
+                    }
+                    dailyWeather.append(weather)
                 }
             }
         }
-        return _weatherData
+        return dailyWeather
     }
     
     // 時間の直し方わからなかったのでググりました。あってるかわかりませんm(_ _)m
-    class func translateTime(unixDate:NSTimeInterval) -> String {
-        var date = NSDate(timeIntervalSince1970: unixDate)
-        var formatter = NSDateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "ja_JP")
-        formatter.dateFormat = "MM/dd"
-        return formatter.stringFromDate(date) as String
+    private class func translateTime(unixDate: NSTimeInterval) -> String {
+        
+        let dateComp: NSDateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.MonthCalendarUnit|NSCalendarUnit.DayCalendarUnit, fromDate: NSDate(timeIntervalSince1970: unixDate))
+        return "\(dateComp.month)/\(dateComp.day)"
     }
     
-    class func translateDouble(doubleValue:Double) -> String {
-        return NSString(format: "%1.0f゜", floor(doubleValue - 273.15))
+    private class func translateDouble(doubleValue: Double) -> String {
+        return NSString(format: "%1.0f°", floor(doubleValue))
     }
 }
