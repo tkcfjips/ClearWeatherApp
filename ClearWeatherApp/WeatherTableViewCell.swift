@@ -71,5 +71,12 @@ class WeatherTableViewCell: UITableViewCell {
         maxLabel.frame = CGRectMake(kCellSize.width - 120, 20, 100, 40);
         minLabel.frame = CGRectMake(kCellSize.width - 120, 50, 100, 40);
         descriptionLabel.frame = CGRectMake(20, 45, 200, 40);
+        
+//        FCAnimation().performAnimation(self.weatherImageView, duration: 0.5, delay: 0.8, type: .FadeIn)
+//        FCAnimation().performAnimation(self.descriptionLabel, duration: 0.5, delay: 0.4, type: .FadeIn)
+//        FCAnimation().performAnimation(self.maxLabel, duration: 0.5, delay: 0.6, type: .FadeIn)
+//        FCAnimation().performAnimation(self.minLabel, duration: 0.5, delay: 0.4, type: .FadeIn)
+//        FCAnimation().performAnimation(self.dateLabel, duration: 0.5, delay: 0.6, type: .FadeIn)
+        
     }
 }

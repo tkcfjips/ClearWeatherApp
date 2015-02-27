@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B38DE4C1AA054BA006E4D57 /* back0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38DE481AA054BA006E4D57 /* back0.png */; };
+		0B38DE4D1AA054BA006E4D57 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38DE491AA054BA006E4D57 /* back1.png */; };
+		0B38DE4E1AA054BA006E4D57 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38DE4A1AA054BA006E4D57 /* back2.png */; };
+		0B38DE4F1AA054BA006E4D57 /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38DE4B1AA054BA006E4D57 /* back3.png */; };
 		0B489EC51A9889670040E45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B489EC41A9889670040E45A /* AppDelegate.swift */; };
 		0B489EC71A9889670040E45A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B489EC61A9889670040E45A /* ViewController.swift */; };
 		0B489ECC1A9889670040E45A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B489ECB1A9889670040E45A /* Images.xcassets */; };
@@ -19,9 +23,9 @@
 		0B489EF21A988D7C0040E45A /* Clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B489EEE1A988D7C0040E45A /* Clouds.png */; };
 		0B489EF31A988D7C0040E45A /* Rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B489EEF1A988D7C0040E45A /* Rain.png */; };
 		0B489EF41A988D7C0040E45A /* Snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B489EF01A988D7C0040E45A /* Snow.png */; };
-		0BC127861A9DA3590031EA81 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC127851A9DA3590031EA81 /* back.png */; };
 		0BC127881A9DAEB80031EA81 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC127871A9DAEB80031EA81 /* WeatherTableViewCell.swift */; };
 		0BC98EBC1A99DF25006F339A /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC98EBB1A99DF25006F339A /* Alamofire.swift */; };
+		0BD264361A9F2BF7005D3D79 /* FCAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD264351A9F2BF7005D3D79 /* FCAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B38DE481AA054BA006E4D57 /* back0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back0.png; sourceTree = "<group>"; };
+		0B38DE491AA054BA006E4D57 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
+		0B38DE4A1AA054BA006E4D57 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
+		0B38DE4B1AA054BA006E4D57 /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
 		0B489EBF1A9889670040E45A /* ClearWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B489EC31A9889670040E45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B489EC41A9889670040E45A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,9 +59,9 @@
 		0B489EEE1A988D7C0040E45A /* Clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clouds.png; sourceTree = "<group>"; };
 		0B489EEF1A988D7C0040E45A /* Rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rain.png; sourceTree = "<group>"; };
 		0B489EF01A988D7C0040E45A /* Snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snow.png; sourceTree = "<group>"; };
-		0BC127851A9DA3590031EA81 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		0BC127871A9DAEB80031EA81 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		0BC98EBB1A99DF25006F339A /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		0BD264351A9F2BF7005D3D79 /* FCAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 		0B489EEB1A988CEA0040E45A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0BD264351A9F2BF7005D3D79 /* FCAnimation.swift */,
 				0BC127871A9DAEB80031EA81 /* WeatherTableViewCell.swift */,
 			);
 			name = View;
@@ -162,11 +171,14 @@
 			children = (
 				0B489ECD1A9889670040E45A /* LaunchScreen.xib */,
 				0B489ECB1A9889670040E45A /* Images.xcassets */,
+				0B38DE481AA054BA006E4D57 /* back0.png */,
+				0B38DE491AA054BA006E4D57 /* back1.png */,
+				0B38DE4A1AA054BA006E4D57 /* back2.png */,
+				0B38DE4B1AA054BA006E4D57 /* back3.png */,
 				0B489EF01A988D7C0040E45A /* Snow.png */,
 				0B489EEF1A988D7C0040E45A /* Rain.png */,
 				0B489EEE1A988D7C0040E45A /* Clouds.png */,
 				0B489EED1A988D7C0040E45A /* Clear.png */,
-				0BC127851A9DA3590031EA81 /* back.png */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -220,6 +232,7 @@
 				TargetAttributes = {
 					0B489EBE1A9889670040E45A = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = FVAY3DK4CE;
 					};
 					0B489ED31A9889680040E45A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -254,9 +267,12 @@
 				0B489ECF1A9889670040E45A /* LaunchScreen.xib in Resources */,
 				0B489EF41A988D7C0040E45A /* Snow.png in Resources */,
 				0B489EF21A988D7C0040E45A /* Clouds.png in Resources */,
-				0BC127861A9DA3590031EA81 /* back.png in Resources */,
+				0B38DE4F1AA054BA006E4D57 /* back3.png in Resources */,
 				0B489EF31A988D7C0040E45A /* Rain.png in Resources */,
+				0B38DE4C1AA054BA006E4D57 /* back0.png in Resources */,
+				0B38DE4D1AA054BA006E4D57 /* back1.png in Resources */,
 				0B489ECC1A9889670040E45A /* Images.xcassets in Resources */,
+				0B38DE4E1AA054BA006E4D57 /* back2.png in Resources */,
 				0B489EF11A988D7C0040E45A /* Clear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +296,7 @@
 				0BC127881A9DAEB80031EA81 /* WeatherTableViewCell.swift in Sources */,
 				0B489EC71A9889670040E45A /* ViewController.swift in Sources */,
 				0B489EE51A9889800040E45A /* Weather.swift in Sources */,
+				0BD264361A9F2BF7005D3D79 /* FCAnimation.swift in Sources */,
 				0B489EC51A9889670040E45A /* AppDelegate.swift in Sources */,
 				0B489EE91A9889BF0040E45A /* OpenWeatherAPIClient.swift in Sources */,
 			);
@@ -396,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ClearWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -406,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ClearWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

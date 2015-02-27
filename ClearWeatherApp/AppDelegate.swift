@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.layer.cornerRadius = 10
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
         return true
