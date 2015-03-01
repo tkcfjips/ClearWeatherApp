@@ -20,11 +20,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     var weatherArray = [DailyWeather]()
     
-    let backImageName = [
-        "back0",
-        "back1",
-        "back2",
-        "back3"
+    let backImages = [
+        UIImage(named: "back0"),
+        UIImage(named: "back1"),
+        UIImage(named: "back2"),
+        UIImage(named: "back3")
     ]
     
     // MARK: - Lifecycle
@@ -32,9 +32,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func loadView() {
         super.loadView()
         
+        NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "changeBack", userInfo: nil, repeats: true)
+        
         let kScreenSize = UIScreen.mainScreen().bounds.size
-        self.view.layer.cornerRadius = 10
-        NSTimer.scheduledTimerWithTimeInterval(8, target: self, selector: "changeBack", userInfo: nil, repeats: true)
         
         tableView = UITableView(frame: CGRectMake(0, kScreenSize.height/2, kScreenSize.width, kScreenSize.height/2))
         tableView.separatorColor = UIColor.clearColor()
@@ -43,8 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         
         backImageView = UIImageView(frame: CGRectMake(0, 0, kScreenSize.width, kScreenSize.height))
-        backImageView.image = UIImage(named: backImageName[random() % backImageName.count])
-        backImageView.layer.cornerRadius = 10
+        backImageView.image = backImages[random() % backImages.count]
         
         weatherImageView = UIImageView(frame: CGRectMake(0, 0, kScreenSize.width/3, kScreenSize.width/3))
         weatherImageView.layer.position = CGPoint(x: kScreenSize.width/2, y: kScreenSize.width/2)
@@ -116,7 +115,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = WeatherTableViewCell(style: .Default, reuseIdentifier: "Cell")
         updateCell(cell, indexPath: indexPath)
         return cell
@@ -134,14 +132,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func changeBack() {
         let transition = CATransition()
-        transition.duration = 4.0
+        transition.duration = 3.0
         transition.type = kCATransitionFade
         backImageView.layer.addAnimation(transition, forKey: nil)
-        backImageView.layer.cornerRadius = 10
-        backImageView.image = UIImage(named: backImageName[random() % backImageName.count])
+        backImageView.image = backImages[random() % backImages.count]
     }
     
     // MARK: - Deinit
+    
     deinit {
         
     }
